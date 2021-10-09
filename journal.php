@@ -93,7 +93,7 @@ foreach ($lines as $i => $line) {
     for ($nonce = 0; $nonce < 999; $nonce++) {
         $tmpHash = myhash("$hash $nonce $line");
         if (substr($tmpHash, -2, 2) === '00') {
-            $finedNonce = str_pad($nonce, 3, '0', STR_PAD_LEFT);
+            $finedNonce = $nonce;
             $hash = $tmpHash;
             break;
         }
